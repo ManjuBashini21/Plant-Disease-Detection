@@ -18,17 +18,12 @@ This project is designed for early detection to assist farmers, researchers, and
 
 ### ⚙ Project Setup
 ```bash
-# 1. Clone repository
-git clone <your-repo-link>
+
+## 1. Clone repository
+git clone https://github.com/ManjuBashini21/Plant-Disease-Detection
 cd plant-disease-detection
 
-# 2. Create virtual environment
-python -m venv venv
-source venv/bin/activate    # For Linux/Mac
-venv\Scripts\activate       # For Windows
-
-# 3. Install Dependencies
-Run the following commands one by one:
+## 2. Install Dependencies
 
 ```bash
 pip install flask
@@ -36,9 +31,9 @@ pip install torch
 pip install torchvision
 pip install pillow
 
-# 4. Place trained .pth model in project directory
+## 4. Place trained .pth model in project directory
 
-# 5. Run the Flask app
+## 5. Run the Flask app
 python app.py
 ```
 
@@ -63,4 +58,13 @@ python app.py
 - **Title**: Plant Disease Detection and Classification Techniques: A Comparative Study of the Performances  
 - **Journal**: Journal of Big Data, 2024  
 - **Link**: [https://journalofbigdata.springeropen.com/articles/10.1186/s40537-023-00863-9](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-023-00863-9)
+
+### Implementation Screen Shots
+
+<img width="1919" height="968" alt="Screenshot 2025-08-14 233107" src="https://github.com/user-attachments/assets/bcfcf0ef-bb66-4337-ad27-31fc4bdbd14f" />
+
+<img width="1890" height="983" alt="Screenshot 2025-08-14 233125" src="https://github.com/user-attachments/assets/abddd6f2-ab75-417e-afa2-1857665a5563" />
+
+<img width="1906" height="959" alt="Screenshot 2025-08-14 233140" src="https://github.com/user-attachments/assets/0c8bc1a7-6000-4f60-8ff4-c7241fc68a21" />
+
 
