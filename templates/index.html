@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🌿 Plant Disease Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #e6f2f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #2e8b57;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 30px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .custom-file-upload {
+            display: inline-block;
+            padding: 12px 25px;
+            cursor: pointer;
+            background-color: #2e8b57;
+            color: white;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .custom-file-upload:hover {
+            background-color: #246b45;
+        }
+        .prediction {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #2e8b57;
+        }
+        .image-preview {
+            margin-top: 20px;
+        }
+        .image-preview img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #2e8b57;
+            color: white;
+            font-size: 0.9em;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crop Disease Detection</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <form method="POST" enctype="multipart/form-data">
+                <label class="custom-file-upload">
+                    Select Leaf Image
+                    <input type="file" name="file" accept="image/*" required onchange="this.form.submit()">
+                </label>
+            </form>
+
+            {% if uploaded_image %}
+            <div class="image-preview">
+                <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Uploaded Leaf">
+            </div>
+            {% endif %}
+
+            {% if prediction %}
+            <div class="prediction">Prediction: {{ prediction }}</div>
+            {% endif %}
+
+            <div class="note">
+                Supported formats: JPEG, PNG. Max file size: 10MB.
+            </div>
+        </div>
+    </main>
+
+    
+</body>
+</html>
