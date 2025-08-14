@@ -6,7 +6,7 @@ This project is designed for early detection to assist farmers, researchers, and
 
 ---
 
-### 🛠 Tech Stack
+### Tech Stack
 - **Frontend:** HTML5, CSS3  
 - **Backend:** Python 3, Flask  
 - **Deep Learning Framework:** PyTorch, Torchvision  
@@ -16,7 +16,7 @@ This project is designed for early detection to assist farmers, researchers, and
 
 ---
 
-### ⚙ Project Setup
+### Project Setup
 ```bash
 
 ## 1. Clone repository
@@ -63,7 +63,9 @@ python app.py
 
 <img width="1919" height="968" alt="Screenshot 2025-08-14 233107" src="https://github.com/user-attachments/assets/bcfcf0ef-bb66-4337-ad27-31fc4bdbd14f" />
 
+
 <img width="1890" height="983" alt="Screenshot 2025-08-14 233125" src="https://github.com/user-attachments/assets/abddd6f2-ab75-417e-afa2-1857665a5563" />
+
 
 <img width="1906" height="959" alt="Screenshot 2025-08-14 233140" src="https://github.com/user-attachments/assets/0c8bc1a7-6000-4f60-8ff4-c7241fc68a21" />
 
