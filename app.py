@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from torchvision import transforms
 from PIL import Image
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import os
 from flask import send_from_directory
 
@@ -135,5 +135,25 @@ def index():
 
     return render_template("index.html", prediction=prediction, uploaded_image=uploaded_image)
 
+@app.route("/api/predict", methods=["POST"])
+def api_predict():
+    if "file" not in request.files:
+        return jsonify({"error": "No file uploaded"}), 400
+    
+    file = request.files["file"]
+    if file.filename == "":
+        return jsonify({"error": "No file selected"}), 400
+
+    file_path = os.path.join("uploads", file.filename)
+    file.save(file_path)
+    class_id = predict_image(file_path)
+    prediction = disease_labels[class_id]
+
+    return jsonify({
+        "prediction": prediction,
+        "filename": file.filename,
+        "image_url": f"/uploads/{file.filename}"
+    })
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
